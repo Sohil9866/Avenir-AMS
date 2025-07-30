@@ -1,6 +1,6 @@
 [
   { "id": 1, "title": "Number of Employees", "content": "20" },
-  { "id": 2, "title": "Apply Leave", "content": "00" },
-  { "id": 3, "title": "Leave Taken", "content": "0" },
+  { "id": 2, "title": "Leave Request", "content": "00" },
+  { "id": 3, "title": "On Leave", "content": "0" },
   { "id": 4, "title": "", "content": "Web/App Attendance" }
 ]

@@ -2,16 +2,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import {
-  FaHome,
-  FaUsers,
-  FaCalendarCheck,
-  FaClipboardList,
-  FaCog,
-  FaSignOutAlt,
-  FaBars,
-} from "react-icons/fa";
+import { FaSignOutAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { AppRoutes } from "../shared/@constants/routes";
+
+import Logo from "../assets/Logo.svg?url";
+import DashboardIcon from "../assets/Dashboard.svg?url";
+import AttendanceIcon from "../assets/Attendance.svg?url";
+import EmployeesIcon from "../assets/Employees.svg?url";
+import LeaverequestIcon from "../assets/LeaveRequest.svg?url";
+import SettingsIcon from "../assets/Settings.svg?url";
 
 const Sidebar = () => {
   const { logout } = useAuth();
@@ -20,23 +19,33 @@ const Sidebar = () => {
   return (
     <div
       className={`h-screen flex flex-col justify-between bg-white text-black p-4 shadow-lg
-      ${collapsed ? "w-20" : "w-56"} transition-all duration-300`}
+      ${
+        collapsed ? "w-15" : "w-44"
+      } transition-all duration-300 ease-in-out overflow-hidden`}
     >
       {/* Top Section */}
       <div>
-        {/* Title + Collapse Button */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-2 mb-6">
+          {/* Logo (hidden when collapsed) */}
           {!collapsed && (
-            <h1 className="text-2xl font-bold text-blue-800 whitespace-nowrap">
-              DASHBOARD
-            </h1>
+            <img
+              src={Logo}
+              alt="Logo"
+              className="w-26 transition-all duration-300"
+            />
           )}
+
+          {/* Toggle Button to right of logo */}
           <button
             onClick={() => setCollapsed(!collapsed)}
             className="text-gray-800 hover:text-blue-600 focus:outline-none"
             aria-label="Toggle Sidebar"
           >
-            <FaBars size={20} />
+            {collapsed ? (
+              <FaChevronRight size={20} />
+            ) : (
+              <FaChevronLeft size={20} />
+            )}
           </button>
         </div>
 
@@ -46,23 +55,23 @@ const Sidebar = () => {
             to={AppRoutes.DASHBOARD}
             className="flex items-center gap-3 hover:text-blue-600 whitespace-nowrap"
           >
-            <FaHome size={20} />
-            {!collapsed && <span>Home</span>}
+            <img src={DashboardIcon} alt="Dashboard" className="w-5 h-5" />
+            {!collapsed && <span>Dashboard</span>}
           </Link>
 
           <Link
             to={`${AppRoutes.DASHBOARD}/employee-data`}
             className="flex items-center gap-3 hover:text-blue-600 whitespace-nowrap"
           >
-            <FaUsers size={20} />
-            {!collapsed && <span>Employee Data</span>}
+            <img src={EmployeesIcon} alt="Employees" className="w-5 h-5" />
+            {!collapsed && <span>Employees</span>}
           </Link>
 
           <Link
             to={`${AppRoutes.DASHBOARD}/attendance`}
             className="flex items-center gap-3 hover:text-blue-600 whitespace-nowrap"
           >
-            <FaCalendarCheck size={20} />
+            <img src={AttendanceIcon} alt="Attendance" className="w-5 h-5" />
             {!collapsed && <span>Attendance</span>}
           </Link>
 
@@ -70,7 +79,11 @@ const Sidebar = () => {
             to={`${AppRoutes.DASHBOARD}/leave-request`}
             className="flex items-center gap-3 hover:text-blue-600 whitespace-nowrap"
           >
-            <FaClipboardList size={20} />
+            <img
+              src={LeaverequestIcon}
+              alt="Leave Request"
+              className="w-5 h-5"
+            />
             {!collapsed && <span>Leave Request</span>}
           </Link>
 
@@ -78,7 +91,7 @@ const Sidebar = () => {
             to={`${AppRoutes.DASHBOARD}/settings`}
             className="flex items-center gap-3 hover:text-blue-600 whitespace-nowrap"
           >
-            <FaCog size={20} />
+            <img src={SettingsIcon} alt="Settings" className="w-5 h-5" />
             {!collapsed && <span>Settings</span>}
           </Link>
         </nav>

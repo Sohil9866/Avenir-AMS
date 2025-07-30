@@ -8,20 +8,21 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="p-4 sm:p-6">
+    <div className="p-2 sm:p-6">
+      <h1 className="font-bold text-2xl mb-6">Dashboard</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
         {cardData.map((card) =>
           card.id === 4 ? (
             <div
               key={card.id}
-              className="bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition flex flex-col justify-between font-bold"
+              className="bg-white shadow-md rounded-xl p-3 hover:shadow-lg transition flex flex-col justify-between font-bold"
             >
-              <p className="mt-3 text-center">{card.content}</p>
+              <p className="mt-4 text-center">{card.content}</p>
               <button
                 onClick={handleCheckIn}
                 className="mt-2 bg-green-700 hover:bg-green-900 text-white py-2 rounded-md transition m-3"
               >
-                Check In 
+                Check In
               </button>
             </div>
           ) : (
