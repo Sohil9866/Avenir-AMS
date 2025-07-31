@@ -1,0 +1,46 @@
+// context/AuthContext.tsx
+import React, { createContext, useContext, useState, useEffect } from "react";
+
+interface AuthContextType {
+  loggedIn: boolean;
+  login: (token: string) => void;
+  logout: () => void;
+}
+
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  // Sync with localStorage on mount
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setLoggedIn(!!token);
+  }, []);
+
+  const login = (token: string) => {
+    localStorage.setItem("token", token);
+    setLoggedIn(true);
+  };
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    setLoggedIn(false);
+  };
+
+  return (
+    <AuthContext.Provider value={{ loggedIn, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export function useAuth() {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used within AuthProvider");
+  }
+  return context;
+}

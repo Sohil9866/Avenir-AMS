@@ -1,0 +1,82 @@
+[
+  {
+    "id": "123",
+    "name": "Ravi Rauniyar",
+    "address": "Hetauda",
+    "email": "ravirauniyar@gmail.com",
+    "phone": "9800000001",
+    "designation": "Lead Developer"
+  },
+  {
+    "id": "245",
+    "name": "Sulav Tamang",
+    "address": "Hetauda",
+    "email": "sulavtamang123@gmail.com",
+    "phone": "9800000002",
+    "designation": "Lead Front-end Developer"
+  },
+  {
+    "id": "312",
+    "name": "Sohil Shrestha",
+    "address": "Hetauda",
+    "email": "sohilshrestha@gmail.com",
+    "phone": "9800000003",
+    "designation": "Front-end Developer"
+  },
+  {
+    "id": "428",
+    "name": "Pranita Paudel",
+    "address": "Hetauda",
+    "email": "pranita@gmail.com",
+    "phone": "9800000004",
+    "designation": "Front-end Developer"
+  },
+  {
+    "id": "452",
+    "name": "Puja Negi",
+    "address": "Hetauda",
+    "email": "puja@gmail.com",
+    "phone": "9800000005",
+    "designation": "Back-end Developer"
+  },
+  {
+    "id": "554",
+    "name": "Utsav Nepal",
+    "address": "Hetauda",
+    "email": "utsavnepal@gmail.com",
+    "phone": "9800000006",
+    "designation": "Full Stack Developer"
+  },
+  {
+    "id": "654",
+    "name": "Prajwal pokhrel",
+    "address": "Hetauda",
+    "email": "prajwalpokhrel@gmail.com",
+    "phone": "9800000007",
+    "designation": "Graphics Desginer"
+  },
+  {
+    "id": "732",
+    "name": "Aleina Dahal",
+    "address": "Hetauda",
+    "email": "aleina@gmail.com",
+    "phone": "9800000008",
+    "designation": "UI/UX Desginer"
+  },
+  {
+    "id": "866",
+    "name": "Shiva Gautam",
+    "address": "Hetauda",
+    "email": "Shiva@gmail.com",
+    "phone": "9800000009",
+    "designation": "Mobile Developer"
+  },
+  {
+    "id": "954",
+    "name": "Krishna Singh",
+    "address": "Birgunj",
+    "email": "krishna@gmail.com",
+    "phone": "9800000009",
+    "designation": "UI/UX Desginer"
+  }
+]
