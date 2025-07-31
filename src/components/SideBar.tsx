@@ -31,7 +31,7 @@ const Sidebar = () => {
             <img
               src={Logo}
               alt="Logo"
-              className="w-26 transition-all duration-300"
+              className="w-20 transition-all duration-300"
             />
           )}
 

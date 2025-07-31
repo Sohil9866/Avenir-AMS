@@ -13,6 +13,7 @@ import EmployeeData from "../pages/EmployeeData";
 import Attendance from "../pages/Attendance";
 import LeaveRequest from "../pages/LeaveRequest";
 import Settings from "../pages/Settings";
+import AddEmployee from "../pages/AddEmployee";
 
 const router = createBrowserRouter([
   { path: "/", element: <Navigate to={AppRoutes.LOGIN} replace /> },
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
       { path: "attendance", element: <Attendance /> }, // /dashboard/attendance
       { path: "leave-request", element: <LeaveRequest /> }, // /dashboard/leave-request
       { path: "settings", element: <Settings /> }, // /dashboard/settings
+      {path: "add-employee", element:<AddEmployee/>}
     ],
   },
 ]);
